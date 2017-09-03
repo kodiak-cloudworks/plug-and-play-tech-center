@@ -1,0 +1,48 @@
+#
+#   Module: vnas.yaml
+#
+#   Applies to both memcloud and storagecloud
+#
+#
+#
+version:    0.3
+updated:    6.11.2017
+contact:    support@kodiakdata.com
+#
+# Standard vNAS updated.  ss 6.11.2017
+standard  :
+  filename  : cwT-vNAS.xml
+  params :
+    name  : -placeholder-
+    vcpu  : 4
+    ram   : 4
+  disksets :
+  - datadisks :
+      size    : 150
+      count   : 6
+
+      
+hybrid  :
+  filename  : cwT-vNASH.xml
+  params:
+    name  : -placeholder-
+    hosts : 1
+    vcpu  : 4
+    ram   : 6
+    boot  : 15
+  disksets :
+  - diskset1 :
+      count   : 12
+      size    : 500
+  - diskset2 :
+      count   : 12
+      size    : 500
+  - ZIL :
+      count   : 2
+      size    : 20
+       
+  - L2ARC :
+      count   : 2
+      size    : 50 
+# end of vnas.yaml
+

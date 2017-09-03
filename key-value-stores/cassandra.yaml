@@ -1,0 +1,18 @@
+name:         cassandra-base
+version:      1
+update-date:  6.25.2017
+contact:      kien@kodiakdata.com
+notes:
+standard-3-node :
+  filename  : cwT-cassandra-s3n.xml
+  params :
+    name  : Cassandra-s3N
+    hosts   : 3
+    vcpu  : 4
+    ram   : 16
+    boot  : 25
+  disksets :
+  - datadisks :
+      .size    : 100
+      .count   : 3
+

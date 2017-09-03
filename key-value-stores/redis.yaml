@@ -1,0 +1,18 @@
+name:         redis-base
+version:      1
+update-date:  6.1.2017
+contact:      kien@kodiakdata.com
+notes:
+# Standard vNAS updated.  ss 6.11.2017
+standard  :
+  filename  : cw-redis-template.xml
+  params :
+    name  : Redis_basic
+    vcpu  : 4
+    ram   : 4
+  disksets :
+  - datadisks :
+      size    : 150
+      count   : 6
+
+

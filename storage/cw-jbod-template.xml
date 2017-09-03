@@ -1,0 +1,14 @@
+<data_container_template>
+    <id>{{name}}</id>
+    <dock_plate_id/>
+    <name>JBOD</name>
+    <state/>
+    <created_on/>
+    <last_modified_by/>
+    <last_modified></last_modified>
+    <apphost>
+        <name>vNAS</name>
+        <apphost_template>FreeNAS</apphost_template>
+       <virtual_rack>3</virtual_rack>
+    </apphost>
+</data_container_template>

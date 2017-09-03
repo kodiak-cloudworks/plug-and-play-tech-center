@@ -1,0 +1,36 @@
+<data_container_template>
+    <id/>
+    <dock_plate_id/>
+    <name>{{name}}</name>
+    <state/>
+    <created_on/>
+    <last_modified_by/>
+    <last_modified/>
+    <apphost_template>
+        <name>MySql_Node</name>
+        <type>kvm</type>
+        <vcpu>{{vcpu}}</vcpu>
+        <memory>{{ram}}</memory>
+        <short_hostname>true</short_hostname>
+        <image>
+            <name>CentOS7.3-Mysql5.7.18</name>
+            <type>qcow2</type>
+            <os>Linux</os>
+            <firstboot_script>mysql_ready.sh</firstboot_script>
+        </image>
+        <vdisk_set>
+            <name></name>
+            <vdisk>
+                <count>1</count>
+                <type>Fast</type>
+                <size>{{datadiskssize}}</size>
+           </vdisk>
+        </vdisk_set>
+    </apphost_template>
+    <apphost>
+        <name>MySql</name>
+        <apphost_template>MySql_Node</apphost_template>
+        <count>1</count>
+    	<virtual_rack>1</virtual_rack>
+    </apphost>
+</data_container_template>

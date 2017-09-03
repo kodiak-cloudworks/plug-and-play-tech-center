@@ -1,0 +1,56 @@
+<data_container_template>
+    <id></id>
+    <dock_plate_id/>
+    <name>{{name}}</name>
+    <state/>
+    <created_on/>
+    <last_modified_by/>
+    <last_modified></last_modified>
+    <apphost_template>
+        <name>FreeNAS</name>
+        <type>kvm</type>
+        <vcpu>{{vcpu}}</vcpu>
+        <memory>{{ram}}</memory>
+        <image>
+            <name>FreeNAS-9.10</name>
+            <type>qcow2</type>
+            <os>FreeBSD</os>
+        </image>
+        <vdisk_set>
+            <name>NAS</name>
+            <vdisk>
+                <name>ZIL1-%n</name>
+                <count>1</count>
+                <type>FAST</type>
+                <size>10</size>
+                <virtual_rack_id>3</virtual_rack_id>
+            </vdisk>
+            <vdisk>
+                <name>data1-%n</name>
+                <count>{{(( datadiskscount | int) /   3) | int}}</count>
+                <type>FAST</type>
+                <size>{{datadiskssize}}</size>
+                <virtual_rack_id>1</virtual_rack_id>
+            </vdisk>
+            <vdisk>
+                <name>data2-%n</name>
+                <count>{{(( datadiskscount | int) /   3) | int}}</count>
+                <type>Fast</type>
+                <size>{{datadiskssize}}</size>
+                <virtual_rack_id>2</virtual_rack_id>
+            </vdisk>
+            <vdisk>
+                <name>data3-%n</name>
+                <count>{{(( datadiskscount | int) /   3) | int}}</count>
+                <type>Fast</type>
+                <size>{{datadiskssize}}</size>
+                <virtual_rack_id>3</virtual_rack_id>
+            </vdisk>
+        </vdisk_set>
+    </apphost_template>
+    <apphost>
+        <name>vNAS</name>
+        <apphost_template>FreeNAS</apphost_template>
+       <virtual_rack>3</virtual_rack>
+    </apphost>
+</data_container_template>

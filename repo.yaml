@@ -1,0 +1,143 @@
+version:      0.5.2
+updated:    6.29.2017
+
+# Memcloud services 
+cloud-services  : 
+  big-data.Cloudera:  
+  - hdfs    : [standard]
+  - impala  : [standard]
+  
+  replicator-etl:
+  - tungsten-preconfigured :  [mysql-mysql, mysql-hadoop, mysql-clickhouse, kafka-hdfs]
+  - tungsten-custom :     [configurable] 
+  
+  big-data.Hortonworks:  
+  - HDP-Hortonworks : [ hdp-standard ]
+   
+  big-data.MapR:  
+  - MapR-community-edition : [ standard ]
+  
+  big-data.Apache :
+  - Apache-SMACK  : [ standard, extended ]
+  - hdfs-big-data : [ data-only, +spark, +druid ]
+  - kafka         : [ standard ]
+  
+  big-data-elk :
+  - elasticsearch  : [ standard ] 
+  - logstash        : [ data-only ]
+  - elasticsearch-logstash-kibana : [standard ]
+  
+  
+  big-data-multi-stack :
+  - Apache-SMACK  : [standard]
+  - elasticsearch-logstash-kibana   :  [standard]
+
+  cloud :        
+  - DCOS            : [ enterprise-edition, community-edition ] 
+  - Docker-swarm    : [ swarm-cluster ]
+  - host-cluster   : [ generic-cluster ]
+  - Kubernetes      : [ miniKube, standard, extended ]
+  - Redhat-Openshift : [ standard, mini]
+  - bunch-of-nodes : [ default, multinode ]
+       
+  storage:
+  - ceph  :   [ production-ceph-core]
+  - gluster : [standalone, gluster-docker-swarm-bootstrap ]
+  - jbod  :   [standard]
+  - vNAS  :   [standard, hybrid]
+  - gpfs  :   [standard ]
+  - lustre  :   [standard ]
+  - minio : [standard ]
+   
+# StorageCloud services may be similar or different
+storage-services :
+  storage:
+  - jbod  :   [standard]
+  - vNAS  :   [standard, hybrid]
+  
+  clusters:
+  - ceph  :   [rht-test-drive, rht-certification, production-ceph-core]
+  - gluster : [standalone, gluster-docker-swarm-bootstrap ]
+  - gpfs  :   [standard ]
+  - lustre  :   [standard ] 
+  
+  key-value-stores: 
+  - Redis     : [ standard, cluster ]
+  - Cassandra : [ standard-3-node ]
+  - Riak      : [ standard ]
+  - Memcache  : [ standard-fixed, autoscaling ]
+  - Couchbase : [ standard ]
+  
+  data-lakes: 
+  - hdfs-single-tenant-data-lake  : [ all-flash, hybrid, tiered ] 
+  - hdfs-multi-tenant-data-lake   : [ all-flash, hybrid, tiered ] 
+  
+  
+
+# Database services may be similar or different
+database-services :
+  sql-databases:
+  - Oracle    : [standard, RAC ]
+  - SQL-server-2017-linux : [ standard ]
+  - MySQL                 : [ default-single-node, 3-node-cluster ]
+  - Postgress             : [ single-node ]
+  - MariaDB         : [ default-engine, +columnstore ]
+  - Memsql          : [ default ]
+ 
+  mpp-columnar-databases:
+  - MariaDB         : [ +columnstore ]
+  - Clickhouse      : [ test-drive, standard ]
+  - Vertica         : [ test-drive, standard ]
+
+  nosql-databases:
+  - MongoDB               : [ standard ]
+  - Cassandra             : [ multi-node]
+
+  analytics:
+  - Druid   : [standard]
+  - Drill   : [standard]
+  - Impala  : [standard]
+  - Spark   : [standard]
+  
+  
+misc:
+  multi-stack-projects :
+  - SMACK  : [standard]
+  - ELK   :  [standard]
+ 
+# Placeholder for private repo 
+myrepo :
+  my-multi-stack-services :
+  - login-to-view  : [user-services-list]
+  my-private-services :
+  - login-to-view  : [user-services-list]
+
+testdrives:
+  storage:
+  - ceph :            [ rht-standard, rht-extended-testdrive ]
+  - hdfs-tiering:     [ standard ]
+  - lamdafire-proxy:  [standard, +tiering ]
+  
+  databases: 
+  - clickhouse :      [ standard-clickhouse-testdrive, large-clickhouse-testdrive, custom-clickhouse-testdrive ]
+  
+demos: 
+  databases:
+  - clickhouse: [nyc-taxi-rides-dataset, top-2000-dataset, ontime-arrival-dataset]
+  - kx :        [nyc-taxi-rides]
+  
+  storage:
+  - menlostor : [standard]
+  - lamdafire-proxy:  [standard, +tiering ] 
+  
+  replicator-etl:
+  - tungsten :  [mysql-mysql, mysql-hadoop, mysql-clickhouse, kafka-hdfs]
+  
+benchmarks: 
+  databases:
+  - clickhouse: [standard, large, custom]
+
+  
+ ## -- end of repo.yaml
+  
+  

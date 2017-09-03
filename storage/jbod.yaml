@@ -1,0 +1,21 @@
+#
+#   Module: jbod.yaml
+#
+#   Applies to both memcloud and storagecloud
+#
+#
+#
+version:    0.3
+updated:    6.13.2017
+contact:    support@kodiakdata.com
+#
+# Standard JBOD updated.  ss 6.11.2017
+standard  :
+  filename  : cw-jbod-template.xml
+  params:
+    name  : -placeholder-
+  disksets :
+  - diskset0 :
+      size    : 150
+      count   : 6
+ 

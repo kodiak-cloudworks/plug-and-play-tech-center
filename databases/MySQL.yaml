@@ -1,0 +1,21 @@
+#
+#   Module: MySQL.yaml
+#
+#   Applies to both memcloud and storagecloud
+#
+#
+version:    1
+updated:    6.23.2017
+contact:    support@kodiakdata.com
+#
+default-single-node  :
+  filename  : single-node-mysql-5-7-18.xml
+  params :
+    name  : MySQL
+    vcpu  : 4
+    ram   : 16
+  disksets :
+  - datadisks :
+       size   : 500
+
+# end of MySQL.yaml

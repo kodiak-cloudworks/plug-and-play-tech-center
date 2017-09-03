@@ -1,0 +1,48 @@
+#
+#   Module: ceph.yaml
+#
+#   Applies to both memcloud and storagecloud
+#
+version:    0.4
+updated:    6.27.2017
+updated-by: kyih
+contact:    support@kodiakdata.com
+#
+#ceph.yaml specifies configurations for CEPH templates
+#ss 6.11.2017
+
+rht-test-drive  : # Only name is changeable
+  filename  : cwT-ceph-rht-test-drive.xml
+  params :
+    name  : -placeholder-
+      
+rht-certification  :
+  filename  : cwT-ceph-certification.xml
+  params:
+    name  : -placeholder-
+    hosts : 12
+    vcpu  : 4
+    ram   : 6
+    boot  : 15
+  hosts   :
+    osd   :
+  disksets :
+  - diskset1 :
+      count   : 12
+      size    : 500
+
+production-ceph-core:
+  filename  : production-ceph-core
+  params:
+    name  : -placeholder-
+    hosts : 1
+    vcpu  : 4
+    ram   : 6
+    boot  : 15
+
+standard  : # Only name is changeable, this is for testdrive
+  filename  : cwT-ceph-rht-test-drive.xml
+  params :
+    name  : -placeholder-
+      
+# end of ceph.yaml

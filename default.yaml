@@ -1,0 +1,26 @@
+#
+#   Module: default.yaml
+#
+#   Applies to both memcloud and storagecloud
+#
+#
+#
+version:    0.1.0
+updated:    7.26.2017
+contact:    support@kodiakdata.com
+#
+standard  :
+  filename  : default-standard.xml
+  params :
+    name  : -placeholder-
+    vcpu  : 4
+    ram   : 4
+  disksets :
+  - datadisks :
+      size    : 150
+      count   : 6
+
+      
+
+# end of default.yaml
+

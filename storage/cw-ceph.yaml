@@ -1,0 +1,26 @@
+#
+#   Module: cw-ceph.yaml
+#
+#   Applies to both memcloud and storagecloud
+#
+#
+#
+version:      1
+updated:    6.4.2017
+contact:    support@kodiakdata.com
+
+template  : cw-mc-ceph-10.xml
+
+# params can be changed by cloudworks
+params  : 
+  name  : -placeholder-
+  hosts : 12
+  image :
+  vcpu  : 4
+  ram   : 8
+  boot  : 25
+  zil   : 0
+  l2arc : 0
+  
+ # -- end of params
+
