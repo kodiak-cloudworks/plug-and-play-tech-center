@@ -54,6 +54,7 @@ storage-services :
   storage:
   - jbod  :   [standard]
   - vNAS  :   [standard, hybrid]
+  - edgecache : [standard, parameterized ]
   
   clusters:
   - ceph  :   [rht-test-drive, rht-certification, production-ceph-core]
@@ -123,19 +124,15 @@ testdrives:
   
 demos: 
   databases:
-  - clickhouse: [nyc-taxi-rides-dataset, top-2000-dataset, ontime-arrival-dataset]
+  - clickhouse: [standard]
   - kx :        [nyc-taxi-rides]
   
   storage:
-  - menlostor : [standard]
-  - lamdafire-proxy:  [standard, +tiering ] 
+  - edgecache:  [standard, asynch, synch ] 
   
   replicator-etl:
   - tungsten :  [mysql-mysql, mysql-hadoop, mysql-clickhouse, kafka-hdfs]
   
-benchmarks: 
-  databases:
-  - clickhouse: [standard, large, custom]
 
   
  ## -- end of repo.yaml
