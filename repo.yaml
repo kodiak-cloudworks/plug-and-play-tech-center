@@ -123,15 +123,10 @@ testdrives:
   - clickhouse :      [ standard-clickhouse-testdrive, large-clickhouse-testdrive, custom-clickhouse-testdrive ]
   
 demos: 
-  databases:
-  - clickhouse: [standard]
-  - kx :        [nyc-taxi-rides]
-  
-  storage:
-  - edgecache:  [standard, asynch, synch ] 
-  
-  replicator-etl:
-  - tungsten :  [mysql-mysql, mysql-hadoop, mysql-clickhouse, kafka-hdfs]
+  data-lake-demos:
+  - hdfs-multi-tenant-data-lake: [standard]
+  storage-demos:
+  - vNAS: [standard]
   
 
   
